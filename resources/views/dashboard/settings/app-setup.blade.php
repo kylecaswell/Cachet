@@ -51,11 +51,30 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>{{ trans('forms.settings.app-setup.time_before_refresh') }}</label>
+                                    <input type="number" name="app_refresh_rate" class="form-control" value="{{ Config::get('setting.app_refresh_rate', 0) }}" placeholder="{{ trans('forms.settings.app-setup.time_before_refresh') }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="enable_subscribers">
                                         <input type="checkbox" value="1" name="enable_subscribers" {{ Config::get('setting.enable_subscribers') ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.subscribers') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" value="0" name="suppress_notifications_in_maintenance">
+                                        <input type="checkbox" value="1" name="suppress_notifications_in_maintenance" {{ Config::get('setting.suppress_notifications_in_maintenance') ? 'checked' : null }}>
+                                        {{ trans('forms.settings.app-setup.suppress_notifications_in_maintenance') }}
                                     </label>
                                 </div>
                             </div>

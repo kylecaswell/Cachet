@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Scheduled Maintenance',
         'scheduled_at' => ', scheduled :timestamp',
         'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted :timestamp',
         'status'       => [
             1 => 'Investigating',
             2 => 'Identified',

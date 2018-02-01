@@ -31,11 +31,23 @@
                 <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
                     <div class="panel panel-message incident">
                         <div class="panel-body">
+                            @if($current_user)
+                            <div class="pull-right btn-group">
+                                <a href="{{ cachet_route('dashboard.incidents.updates.edit', ['incident' => $incident, 'incident_update' => $update]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                            </div>
+                            @endif
                             <div class="markdown-body">
                                 {!! $update->formatted_message !!}
                             </div>
                         </div>
-                        <div class="panel-footer"><small>{{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}</small></div>
+                        <div class="panel-footer">
+                            <small>
+                                <span data-toggle="tooltip" title="
+                                    {{ trans('cachet.incidents.posted_at', ['timestamp' => $update->created_at_formatted]) }}">
+                                    {{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}
+                                </span>
+                            </small>
+                        </div>
                     </div>
                 </div>
             </div>

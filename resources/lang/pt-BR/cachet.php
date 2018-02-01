@@ -29,10 +29,11 @@ return [
     'incidents' => [
         'none'         => 'Nenhum incidente reportado',
         'past'         => 'Incidentes anteriores',
-        'stickied'     => 'Incidentes Persistentes',
-        'scheduled'    => 'Manutenção Agendada',
+        'stickied'     => 'Incidentes Fixados',
+        'scheduled'    => 'Manutenção',
         'scheduled_at' => ', agendada :timestamp',
         'posted'       => 'Postado :timestamp',
+        'posted_at'    => 'Postado em :timestamp',
         'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
@@ -52,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistema operacional|[2,Inf] Todos os sistemas estão operacionais',
-        'bad'   => '[0,1] O sistema encontra-se com alguns problemas|[2,Inf] Alguns sistemas estão com problemas',
-        'major' => '[0,1] O serviço encontra-se com uma falha geral.|[2,Inf] Alguns sistemas encontram-se com falhas gerais',
+        'good'  => '[0,1] Sistema operacional|[2,*] Todos os sistemas estão operacionais',
+        'bad'   => '[0,1] O sistema encontra-se com alguns problemas|[2,*] Alguns sistemas estão com problemas',
+        'major' => '[0,1]O sistema encontra-se com uma falha geral|[2,*]Alguns sistemas encontram-se com falhas gerais',
     ],
 
     'api' => [
